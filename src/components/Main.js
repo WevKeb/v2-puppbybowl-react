@@ -43,7 +43,7 @@ const puppies = [
 ]
 
 const Main = () => {
-      
+
 
     return (
         <div className="Main">
@@ -51,14 +51,8 @@ const Main = () => {
           <Routes>
             <Route path="/" element={<Allpuppies puppies={puppies}/>}></Route>
             <Route path="/addpuppy" element={<Addpuppy />}></Route>
-            <Route path="puppy/:id" element={<Singlepuppy  />}></Route>
+            <Route path="/puppy/:id" element={<Singlepuppy />}></Route>
           </Routes>
-            {/* <h1>
-                Puppy Bowl!
-            </h1>
-            <Addpuppy />
-            <Allpuppies puppies={puppies}/>
-            <Singlepuppy puppy={puppy}/> */}
         </div>
     )
 } 

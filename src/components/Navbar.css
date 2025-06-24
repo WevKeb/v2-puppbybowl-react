@@ -32,3 +32,7 @@ li a {
 li a:hover {
     background-color: blueviolet;
 }
+
+.nav-link.active {
+  background-color: blueviolet;
+}

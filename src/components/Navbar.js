@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css"
 
 
 const Navbar = () => {
-    
+    console.log(NavLink.isActive);
     return (
         <div >
             <nav className="navbar">
                 <ul className="navbar-links">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/addpuppy">Add Puppy</Link></li>
+                    <li><NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/">Home</NavLink></li>
+                    <li><NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/addpuppy">Add Puppy</NavLink></li>
                 </ul>
             </nav>
         </div>
