@@ -1,27 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { createPuppy } from "../api/api";
 
 const Addpuppy = () => {
   const [puppyname, setPuppyname] = useState("");
   const [puppybreed, setPuppybreed] = useState("");
-
-  const createPuppy = async (playerObj) => {
-    try {
-      const response = await fetch(
-        "https://fsa-puppy-bowl.herokuapp.com/api/2211-FTB-ET-WEB-FT/players",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/JSON",
-          },
-          body: JSON.stringify(playerObj),
-        }
-      );
-      const result = await response.json();
-    } catch (error) {
-      console.error("there was an error creating the new puppy", error);
-    }
-  };
 
   return (
     <div>

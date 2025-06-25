@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Singlepuppy.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { fetchPuppy, deletePuppy } from "../api/api";
 
 const Singlepuppy = () => {
   const { id } = useParams();
@@ -10,37 +11,9 @@ const Singlepuppy = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchPuppy = async () => {
-      try {
-        const response = await fetch(
-          `https://fsa-puppy-bowl.herokuapp.com/api/2211-FTB-ET-WEB-FT/players/${id}`
-        );
-        const {
-          data: { player },
-        } = await response.json();
-        setPuppy(player);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchPuppy();
+    console.log(id, "this is id from params");
+    fetchPuppy(id, setPuppy);
   }, []);
-
-  const deletePuppy = async (id) => {
-    try {
-      const response = await fetch(
-        `https://fsa-puppy-bowl.herokuapp.com/api/2211-FTB-ET-WEB-FT/players/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/JSON",
-          },
-        }
-      );
-    } catch (error) {
-      console.error("error deleting that puppy", error);
-    }
-  };
 
   return (
     <div className="singlepuppy-body">
