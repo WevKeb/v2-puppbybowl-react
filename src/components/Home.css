@@ -1,12 +1,18 @@
 .home-body-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.page-title {
-    align-self: center;
+.home-searchbar {
+    padding-bottom: 2vh;
+    width: 50%;
 }
 
 
+.home-searchbar input {
+    width: 100%;
+    font-size: large;
+}
 
 

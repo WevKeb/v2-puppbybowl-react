@@ -4,7 +4,7 @@ import "./Navbar.css"
 
 
 const Navbar = () => {
-    console.log(NavLink.isActive);
+   
     return (
         <div >
             <nav className="navbar">

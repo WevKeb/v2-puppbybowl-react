@@ -1,11 +1,11 @@
-.puppy-container {
+.singlepuppy-body {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    flex-wrap:wrap;
+    margin-bottom: 5vh;
 }
 
-.puppy-card {
+.singlepuppy-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,10 +17,12 @@
     margin-bottom: 2vh;
 }
 
-.puppy-card img {
-    width: 50%;
+.singlepuppy-card img {
+    width: 75%;
     border-radius: 8px;
     border: solid black 2px;
 }
 
-
+.back-button {
+    margin-bottom: 2vh;
+}
