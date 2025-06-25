@@ -61,14 +61,14 @@ export const searchPuppies = async (setPuppies, searchValue) => {
         returnPlayers.push(player);
       }
     });
-    // finally, set the puppies to the new player array that only includes the search value
+    // finally, set the puppies state to dipslay on home page with the new player array that only includes those with the search value
     setPuppies(returnPlayers);
   } catch (error) {
     console.error(error);
   }
 };
 
-export const deletePuppy = async (id) => {
+export const deletePuppy = async (id, setPupDeleted) => {
   try {
     const response = await fetch(
       `https://fsa-puppy-bowl.herokuapp.com/api/2211-FTB-ET-WEB-FT/players/${id}`,
@@ -79,6 +79,8 @@ export const deletePuppy = async (id) => {
         },
       }
     );
+    //set this state to true so the useeffect in Home will trigger to refetch the puppies to display
+    setPupDeleted(true);
   } catch (error) {
     console.error("error deleting that puppy", error);
   }

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { fetchPuppy, deletePuppy } from "../api/api";
 
-const Singlepuppy = () => {
+const Singlepuppy = ({ pupDeleted, setPupDeleted }) => {
   const { id } = useParams();
   const [puppy, setPuppy] = useState({});
 
@@ -34,7 +34,7 @@ const Singlepuppy = () => {
         <p>Status: {puppy.status}</p>
         <button
           onClick={() => {
-            deletePuppy(puppy.id);
+            deletePuppy(puppy.id, setPupDeleted);
             navigate("/");
           }}
         >
